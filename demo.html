@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery On Screen Plugin Demo by @danbetcher</title>
+    <style type="text/css">
+    .bigbox {
+        min-height: 880px;
+        background: #eee;
+    }
+    .smallbox{ display: block; float: left; width: 100px; height: 100px; background: blue; margin: 50px; opacity: .10; }
+    
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <h1>jQuery On Screen Plugin Demo</h1>
+        <p>Check out the <a href="https://github.com/danbetcher/jquery-onscreen">jQuery On Screen Plugin project page on GitHub</a>.</p>
+        <p style="margin-top: 100px;">Scroll down...</p>
+    </div>
+    <div class="smallbox"></div>
+    <div class="smallbox"></div>
+    <div class="smallbox"></div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery.onscreen.js"></script>
+    <script>
+    // Listen for Window Scroll events
+    $( window ).scroll(function() {
+        var delaytime = 100;
+        $(".smallbox").each(function() {
+            delaytime = delaytime + 80;
+            // This is where we test to see if the element is inside the current viewport
+            if ( $(this).onScreen() ) {
+                // If it is, and it hasn't been done already, lets fade it in...
+                if (!$(this).hasClass("showing")) {
+                    $(this).addClass("showing");
+                    $(this).delay(delaytime).fadeTo("fast",1.0);
+                }
+            } else {
+                // If it is no longer in the viewport, reset it's opacity and remove the 'showing' class. (this is optional of course)
+                $(this).css({"opacity":0.1});
+                $(this).removeClass("showing");
+            }
+        });
+        
+    });
+    </script>
+</body>
+</html>
