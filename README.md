@@ -6,11 +6,20 @@ This plugin is a simple way to test if a given element (or part there-of) is ins
 
 Use the plugin as follows:
 ```js
+$('#element').onScreen();
+```
+Returns true if the element is visible in the viewport, or false if it is not.
+
+You can use it as part of a conditional statement as follows:
+```js
 if ($('#element').onScreen()) {
     // Your element is in the Viewport
+} else {
+    // Your element is not in the Viewport
 }
 ```
 
+To see a working example of this plugin, demo.html has been provided as part of the package.
 
 ## Notes & Contribution
 
