@@ -1,4 +1,15 @@
-/*! https://github.com/danbetcher/jquery-onscreen by @danbetcher */
+/*
+ *	jQuery On Screen Plugin
+ *
+ *	Copyright (c) Dan Betcher
+ *	https://www.twitter.com/danbetcher
+ *
+ *	Documentation:
+ *	https://github.com/danbetcher/jquery-onscreen
+ *
+ *	Licensed under the MIT license.
+ *	http://en.wikipedia.org/wiki/MIT_License
+ */
 ;(function ( $ ) {
     $.fn.onScreen = function(){
     
